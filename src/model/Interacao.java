@@ -7,7 +7,9 @@ import org.openxava.annotations.*;
 @Entity
 public class Interacao {
 
-    @Id
+
+@Id @Hidden
+@GeneratedValue ( strategy = GenerationType. IDENTITY )
     @Required
     @Column(name = "id", nullable = true)
     private Integer id;
@@ -24,7 +26,9 @@ public class Interacao {
     @Column(name = "departamento", length = 100, nullable = true)
     private String departamento;
 
-   
+    @Column(name = "idContacto", length = 100, nullable = true)
+    private String idcontacto;
+
     @Column(name = "resultado", length = 100, nullable = true)
     private String resultado;
 
@@ -33,6 +37,9 @@ public class Interacao {
 
     @Column(name = "updated_by", length = 100, nullable = true)
     private String updated_by;
+
+    @OneToMany
+    private Set<Contact> contact;
 
     public void setId(Integer aValue) {
         id = aValue;
@@ -74,7 +81,13 @@ public class Interacao {
         return departamento;
     }
 
-    
+    public void setIdcontacto(String aValue) {
+        idcontacto = aValue;
+    }
+
+    public String getIdcontacto() {
+        return idcontacto;
+    }
 
     public void setResultado(String aValue) {
         resultado = aValue;
@@ -98,5 +111,13 @@ public class Interacao {
 
     public String getUpdated_by() {
         return updated_by;
+    }
+
+    public void setContact(Set<Contact> aValue) {
+        contact = aValue;
+    }
+
+    public Set<Contact> getContact() {
+        return contact;
     }
 }
