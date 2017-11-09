@@ -10,7 +10,6 @@ public class Contact {
 
 @Id @Hidden
 @GeneratedValue ( strategy = GenerationType. IDENTITY )
-    @Required
     @Column(name = "id", nullable = true)
     private Integer id;
 

@@ -8,9 +8,8 @@ import org.openxava.annotations.*;
 public class Interacao {
 
 
-@Id @Hidden
-@GeneratedValue ( strategy = GenerationType. IDENTITY )
-    @Required
+    @Id @Hidden
+    @GeneratedValue ( strategy = GenerationType. IDENTITY )
     @Column(name = "id", nullable = true)
     private Integer id;
 
