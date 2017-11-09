@@ -1,114 +1,102 @@
 package model;
 
-
-
 import java.util.*;
-
 import javax.persistence.*;
+import org.openxava.annotations.*;
 
 @Entity
 public class Interacao {
 
-	@Id
-	private int id;
-	
-	@Column(length=100)
-	private String idContacto;
-	
-	@Column(length=40)
-	private String tipo;//email,carta,reunião...
-	
-	@Column(length=40)
-	private Date data;
-	
-	
-	@Column(length=100)
-	private String assunto;
-	
-	@Column(length=100)
-	private String departamento;
-	
-	@Column(length=100)
-	private String resultado;
-	
-	@Column(length=100)
-	private String created_by;
-	
-	@Column(length=100)
-	private String updated_by;
+    @Id
+    @Required
+    @Column(name = "id", nullable = true)
+    private Integer id;
 
-	public int getId() {
-		return id;
-	}
+    @Column(name = "assunto", length = 100, nullable = true)
+    private String assunto;
 
-	public void setId(int id) {
-		this.id = id;
-	}
+    @Column(name = "created_by", length = 100, nullable = true)
+    private String created_by;
 
-	public String getIdContacto() {
-		return idContacto;
-	}
+    @Column(name = "data", nullable = true)
+    private java.sql.Timestamp data;
 
-	public void setIdContacto(String idContacto) {
-		this.idContacto = idContacto;
-	}
+    @Column(name = "departamento", length = 100, nullable = true)
+    private String departamento;
 
-	public String getTipo() {
-		return tipo;
-	}
+   
+    @Column(name = "resultado", length = 100, nullable = true)
+    private String resultado;
 
-	public void setTipo(String tipo) {
-		this.tipo = tipo;
-	}
+    @Column(name = "tipo", length = 40, nullable = true)
+    private String tipo;
 
-	public Date getData() {
-		return data;
-	}
+    @Column(name = "updated_by", length = 100, nullable = true)
+    private String updated_by;
 
-	public void setData(Date data) {
-		this.data = data;
-	}
+    public void setId(Integer aValue) {
+        id = aValue;
+    }
 
-	public String getAssunto() {
-		return assunto;
-	}
+    public Integer getId() {
+        return id;
+    }
 
-	public void setAssunto(String assunto) {
-		this.assunto = assunto;
-	}
+    public void setAssunto(String aValue) {
+        assunto = aValue;
+    }
 
-	public String getDepartamento() {
-		return departamento;
-	}
+    public String getAssunto() {
+        return assunto;
+    }
 
-	public void setDepartamento(String departamento) {
-		this.departamento = departamento;
-	}
+    public void setCreated_by(String aValue) {
+        created_by = aValue;
+    }
 
-	public String getResultado() {
-		return resultado;
-	}
+    public String getCreated_by() {
+        return created_by;
+    }
 
-	public void setResultado(String resultado) {
-		this.resultado = resultado;
-	}
+    public void setData(java.sql.Timestamp aValue) {
+        data = aValue;
+    }
 
-	public String getCreated_by() {
-		return created_by;
-	}
+    public java.sql.Timestamp getData() {
+        return data;
+    }
 
-	public void setCreated_by(String created_by) {
-		this.created_by = created_by;
-	}
+    public void setDepartamento(String aValue) {
+        departamento = aValue;
+    }
 
-	public String getUpdated_by() {
-		return updated_by;
-	}
+    public String getDepartamento() {
+        return departamento;
+    }
 
-	public void setUpdated_by(String updated_by) {
-		this.updated_by = updated_by;
-	}
-	
-	
-	
+    
+
+    public void setResultado(String aValue) {
+        resultado = aValue;
+    }
+
+    public String getResultado() {
+        return resultado;
+    }
+
+    public void setTipo(String aValue) {
+        tipo = aValue;
+    }
+
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setUpdated_by(String aValue) {
+        updated_by = aValue;
+    }
+
+    public String getUpdated_by() {
+        return updated_by;
+    }
 }
