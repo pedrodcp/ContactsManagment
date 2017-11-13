@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?><Model version="5.0">
+    <Configuration>
+        <Property name="dialect" value="MySQLDialect"/>
+        <Property name="ALIAS" value="contactos"/>
+        <Property name="DRIVER" value="com.mysql.jdbc.Driver"/>
+        <Property name="OX_PACKAGE" value="model"/>
+        <Property name="OX_SRCDIR" value="C:\Users\Rodrigo\Desktop\teste"/>
+        <Property name="OX_STYPE_DATETIME" value=""/>
+        <Property name="OX_STYPE_INT" value=""/>
+        <Property name="OX_STYPE_VARCHAR" value=""/>
+        <Property name="OX_TYPE_DATETIME" value="java.sql.Timestamp"/>
+        <Property name="OX_TYPE_INT" value="Integer"/>
+        <Property name="OX_TYPE_VARCHAR" value="String"/>
+        <Property name="PASSWORD" value=""/>
+        <Property name="PROMPTFORPASSWORD" value="false"/>
+        <Property name="URL" value="jdbc:mysql://localhost:3306/contactos"/>
+        <Property name="USER" value="root"/>
+    </Configuration>
+    <CustomTypes/>
+    <Domains/>
+    <Tables>
+        <Table id="50ea465d-8b65-466d-8091-145ea7f6a6df" name="contact" schema="">
+            <Property name="LOCATION" value="52:298"/>
+            <Attribute datatype="INT" defaultvalue="" extra="" fraction="0" id="cfc2d6a2-89b1-4df3-b8c6-0a7bd6738149" name="id" nullable="false" scale="10" size="10"/>
+            <Attribute datatype="VARCHAR" defaultvalue="" extra="" fraction="0" id="babdaf0f-5a6a-4260-82da-766e022d74e3" name="companyName" nullable="true" scale="10" size="40"/>
+            <Attribute datatype="VARCHAR" defaultvalue="" extra="" fraction="0" id="57d4a27b-d056-4d80-bfd1-6daaa183db86" name="created_by" nullable="true" scale="10" size="40"/>
+            <Attribute datatype="VARCHAR" defaultvalue="" extra="" fraction="0" id="522d7f05-82db-487f-91e2-459207b63678" name="email" nullable="true" scale="10" size="40"/>
+            <Attribute datatype="VARCHAR" defaultvalue="" extra="" fraction="0" id="58d45f13-c435-4bab-8f7c-f9b0f51f9293" name="information" nullable="true" scale="10" size="40"/>
+            <Attribute datatype="VARCHAR" defaultvalue="" extra="" fraction="0" id="ba6e2b87-09db-4517-9afe-800d719c9699" name="name" nullable="true" scale="10" size="40"/>
+            <Attribute datatype="VARCHAR" defaultvalue="" extra="" fraction="0" id="1881e6dc-f238-4875-9872-bdbf3d09cb16" name="phone" nullable="true" scale="10" size="12"/>
+            <Attribute datatype="VARCHAR" defaultvalue="" extra="" fraction="0" id="6970e3fc-c149-4c54-96c1-5c26fb01a84c" name="updated_by" nullable="true" scale="10" size="40"/>
+            <Attribute datatype="INT" defaultvalue="" extra="" fraction="0" id="a131746e-b315-415a-8964-e01a11146d1d" name="FK_interacao_id" nullable="false" scale="10" size="10"/>
+            <Index id="0eefd1c3-fbea-4247-b735-af68185e5059" indextype="PRIMARYKEY" name="PK_contact">
+                <Indexattribute attributerefid="cfc2d6a2-89b1-4df3-b8c6-0a7bd6738149" id="b3c67127-9c63-4e6f-bb7e-b7239f54c022"/>
+            </Index>
+        </Table>
+        <Table id="ad6cbfe0-d921-4b09-acf9-17cf737753dd" name="interacao" schema="">
+            <Property name="LOCATION" value="761:251"/>
+            <Attribute datatype="INT" defaultvalue="" extra="" fraction="0" id="595ccc9c-eee5-40d3-b65a-2dc4fb686092" name="id" nullable="false" scale="10" size="10"/>
+            <Attribute datatype="VARCHAR" defaultvalue="" extra="" fraction="0" id="48324a74-49fd-421c-86de-7cff520973fa" name="assunto" nullable="true" scale="10" size="100"/>
+            <Attribute datatype="VARCHAR" defaultvalue="" extra="" fraction="0" id="47896b24-e94b-4176-a1a4-0e7c0d3334fc" name="created_by" nullable="true" scale="10" size="100"/>
+            <Attribute datatype="DATETIME" defaultvalue="" extra="" fraction="0" id="e8274f42-0251-47f5-9cda-bce46d30866e" name="data" nullable="true" scale="10" size="19"/>
+            <Attribute datatype="VARCHAR" defaultvalue="" extra="" fraction="0" id="5ac89d39-bc37-48fb-9dd4-27e22ff8e472" name="departamento" nullable="true" scale="10" size="100"/>
+            <Attribute datatype="VARCHAR" defaultvalue="" extra="" fraction="0" id="089c26ca-4af2-46cb-a228-a9b47f4d8d8e" name="idContacto" nullable="true" scale="10" size="100"/>
+            <Attribute datatype="VARCHAR" defaultvalue="" extra="" fraction="0" id="6cd6cbf5-015d-44b0-984c-ee9cc3a02a89" name="resultado" nullable="true" scale="10" size="100"/>
+            <Attribute datatype="VARCHAR" defaultvalue="" extra="" fraction="0" id="3e8dc6f9-591d-4ccf-ab64-468d165bf5e2" name="tipo" nullable="true" scale="10" size="40"/>
+            <Attribute datatype="VARCHAR" defaultvalue="" extra="" fraction="0" id="3810b927-451a-487d-ad8c-908284f593f3" name="updated_by" nullable="true" scale="10" size="100"/>
+            <Index id="0cc662dd-b839-43c6-8e1e-a8d3145f8554" indextype="PRIMARYKEY" name="PK_interacao">
+                <Indexattribute attributerefid="595ccc9c-eee5-40d3-b65a-2dc4fb686092" id="4ac3638f-f3a5-47d4-b701-b7c56433995b"/>
+            </Index>
+        </Table>
+    </Tables>
+    <Relations>
+        <Relation exportingtablerefid="ad6cbfe0-d921-4b09-acf9-17cf737753dd" id="2ee736d8-5b70-43e1-b67f-bbd6d768af2d" importingtablerefid="50ea465d-8b65-466d-8091-145ea7f6a6df" name="iteracao_contact" ondelete="NOTHING" onupdate="NOTHING">
+            <Mapping exportingexpressionrefid="4ac3638f-f3a5-47d4-b701-b7c56433995b" importingattributerefid="a131746e-b315-415a-8964-e01a11146d1d"/>
+        </Relation>
+    </Relations>
+    <Views/>
+    <Subjectareas/>
+    <Comments/>
+</Model>

@@ -1,98 +1,100 @@
 package model;
 
-
+import java.util.*;
 import javax.persistence.*;
+import org.openxava.annotations.*;
 
 @Entity
 public class Contact {
-	@Id
-	private int id;
-	
-	
-	@Column(length=40)
-	private String name;
-	
-	@Column(length=40)	
-	private String email;
-	
-	@Column(length=12)
-	private String phone;
-	
-	@Column(length=40)
-	private String companyName;
-	
-	@Column(length=40)
-	private String information;
-	
-	@Column(length=40)
-	private String created_by;
-	
-	@Column(length=40)
-	private String updated_by;
-	
-	
-	public int getId() {
-		return id;
-	}
-	
-	public void setId(int id) {
-		this.id = id;
-	}
-	
-	public String getName() {
-		return name;
-	}
 
-	public String getEmail() {
-		return email;
-	}
 
-	public void setEmail(String email) {
-		this.email = email;
-	}
+@Id @Hidden
+@GeneratedValue ( strategy = GenerationType. IDENTITY )
+    @Column(name = "id", nullable = true)
+    private Integer id;
 
-	public String getPhone() {
-		return phone;
-	}
+    @Column(name = "companyName", length = 40, nullable = true)
+    private String companyname;
 
-	public void setPhone(String phone) {
-		this.phone = phone;
-	}
+    @Column(name = "created_by", length = 40, nullable = true)
+    private String created_by;
 
-	public String getCompanyName() {
-		return companyName;
-	}
+    @Column(name = "email", length = 40, nullable = true)
+    private String email;
 
-	public void setCompanyName(String companyName) {
-		this.companyName = companyName;
-	}
+    @Column(name = "information", length = 40, nullable = true)
+    private String information;
 
-	public String getInformation() {
-		return information;
-	}
+    @Column(name = "name", length = 40, nullable = true)
+    private String name;
 
-	public void setInformation(String information) {
-		this.information = information;
-	}
+    @Column(name = "phone", length = 12, nullable = true)
+    private String phone;
 
-	public String getCreated_by() {
-		return created_by;
-	}
+    @Column(name = "updated_by", length = 40, nullable = true)
+    private String updated_by;
 
-	public void setCreated_by(String created_by) {
-		this.created_by = created_by;
-	}
+    public void setId(Integer aValue) {
+        id = aValue;
+    }
 
-	public String getUpdated_by() {
-		return updated_by;
-	}
+    public Integer getId() {
+        return id;
+    }
 
-	public void setUpdated_by(String updated_by) {
-		this.updated_by = updated_by;
-	}
+    public void setCompanyname(String aValue) {
+        companyname = aValue;
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public String getCompanyname() {
+        return companyname;
+    }
 
+    public void setCreated_by(String aValue) {
+        created_by = aValue;
+    }
+
+    public String getCreated_by() {
+        return created_by;
+    }
+
+    public void setEmail(String aValue) {
+        email = aValue;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setInformation(String aValue) {
+        information = aValue;
+    }
+
+    public String getInformation() {
+        return information;
+    }
+
+    public void setName(String aValue) {
+        name = aValue;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setPhone(String aValue) {
+        phone = aValue;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setUpdated_by(String aValue) {
+        updated_by = aValue;
+    }
+
+    public String getUpdated_by() {
+        return updated_by;
+    }
 }
